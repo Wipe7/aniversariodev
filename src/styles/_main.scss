@@ -1,0 +1,259 @@
+@import 'variables';
+@import 'hero';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: $secondary-gradient;
+}
+
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: $z-menu;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: $spacing-md;
+
+    &__container {
+        max-width: $desktop;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        font-weight: 700;
+        color: $primary-color;
+    }
+
+    &__menu {
+        display: flex;
+        gap: $spacing-lg;
+
+        @media (max-width: $mobile) {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: $light-color;
+            padding: $spacing-md;
+            flex-direction: column;
+            text-align: center;
+
+            &.active {
+                display: flex;
+            }
+        }
+    }
+
+    &__item {
+        text-decoration: none;
+        color: $text-color;
+        transition: $transition-normal;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+
+    &__toggle {
+        display: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+
+        @media (max-width: $mobile) {
+            display: block;
+        }
+    }
+}
+
+
+.section {
+    min-height: 100vh;
+    padding: $spacing-xl $spacing-md;
+    display: flex;
+    align-items: center;
+
+    &__container {
+        max-width: $desktop;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 $spacing-md;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $spacing-lg;
+
+        @media (max-width: $tablet){
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width:$mobile) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+#countdown {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #ff0000;
+}
+
+
+
+#local {
+    background: $section-gradient-1;
+    .card {
+        background: rgba($light-color, 0.95);
+        backdrop-filter: blur(10px);
+    }
+}
+
+#entretenimento {
+    background: $section-gradient-2;
+    .card {
+        background: rgba($light-color, 0.95);
+        backdrop-filter: blur(10px);
+    }
+}
+
+#regras {
+    background: $section-gradient-3;
+    .card {
+        background: rgba($light-color, 0.95);
+        backdrop-filter: blur(10px);
+    }
+}
+
+
+
+.card {
+padding: $spacing-lg;
+border-radius: 1rem;
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+transition: $transition-normal;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+&:hover {
+    transform: translateX(-10px);
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+&__icon {
+    font-size: 2.5rem;
+    margin-bottom: $spacing-md;
+    text-align: center;
+}
+
+&__title {
+    color: $text-color;
+    font-size: 1.75rem;
+    margin-bottom: $spacing-md;
+    text-align: center;
+}
+
+&__content {
+    color: lighten($text-color, 20%);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    text-align: center;
+
+    br {
+        content: "";
+        display: block;
+        margin: $spacing-sm 0;
+    }
+}
+}
+
+
+.section__title {
+color: $light-color;
+font-size: 2.5rem;
+text-align: center;
+margin-bottom: $spacing-xl;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.section__content {
+max-width: 1000px;
+margin: 0 auto;
+}
+
+
+.card__content {
+ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+        margin-bottom: $spacing-sm;
+        padding-left: $spacing-md;
+        position: relative;
+
+        &:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: $primary-color;
+        }
+    }
+}
+}
+
+.footer {
+    background: $primary-gradient;
+    color: $light-color;
+    padding: $spacing-xl $spacing-md;
+    text-align: center;
+
+    &__content {
+        max-width: $desktop;
+        margin: 0 auto;
+    }
+
+    &__contact {
+        margin-bottom: $spacing-md;
+    }
+
+    &__developer {
+        font-size: 0.875rem;
+        opacity: 0.8;
+    }
+}
+
+
+.button {
+    background: $primary-gradient;
+    color: $light-color;
+    padding: $spacing-md $spacing-lg;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: $transition-normal;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba($primary-color, 0.4);
+    }
+}

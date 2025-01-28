@@ -1,0 +1,33 @@
+
+$primary-gradient: linear-gradient(135deg, #6366f1, #a855f7);
+$secondary-gradient: linear-gradient(135deg, #f0f4ff, #e0e7ff);
+
+
+$section-gradient-1: linear-gradient(135deg, #4f46e5, #7c3aed);
+$section-gradient-2: linear-gradient(135deg, #7c3aed, #d946ef);
+$section-gradient-3: linear-gradient(135deg, #6366f1, #ec4899);
+
+$text-color: #1f2937;
+$light-color: #ffffff;
+$primary-color: #6366f1;
+$secondary-color: #a855f7;
+
+
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+$spacing-xl: 4rem;
+
+
+$mobile: 768px;
+$tablet: 1024px;
+$desktop: 1200px;
+
+
+$transition-normal: all 0.3s ease;
+$transition-slow: all 0.5s ease;
+
+
+$z-menu: 1000;
+$z-hero: 1;
+$z-overlay: 2;
